@@ -25,7 +25,7 @@ const cardSchema = new mongoose.Schema({
 }, {
   timestamps: true,
   toJSON: {
-    transform(_, ret) {
+    transform (_, ret) {
       ret.id = ret._id
       delete ret._id
       delete ret.user

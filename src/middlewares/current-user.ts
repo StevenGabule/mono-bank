@@ -27,7 +27,7 @@ export const currentUser = async (req: Request, res: Response, next: NextFunctio
     if (user) {
       req.currentUser = user
     }
-  } catch (error) {
+  } catch (error: any) {
     console.log(error.message)
   }
   next()

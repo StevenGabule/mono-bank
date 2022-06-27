@@ -24,7 +24,7 @@ router.post('/api/deposit', requireAuth, async (req: Request, res: Response) => 
       return res.status(400).send(card)
     }
     return res.status(400).send({ error: 'card not found!' })
-  } catch (error) {
+  } catch (error: any) {
     console.log(error.message)
     return res.send(error.message)
   }
@@ -54,7 +54,7 @@ router.post('/api/withdraw', requireAuth, async (req: Request, res: Response) =>
       return res.status(400).send(card)
     }
     return res.status(400).send({ error: 'card not found!' })
-  } catch (error) {
+  } catch (error: any) {
     console.log(error.message)
     return res.send(error.message)
   }
@@ -108,7 +108,7 @@ router.post('/api/p2p', requireAuth, async (req: Request, res: Response) => {
     }).save()
 
     res.status(200).send({ status: true })
-  } catch (error) {
+  } catch (error: any) {
     console.log(error.message)
     return res.send(error.message)
   }
